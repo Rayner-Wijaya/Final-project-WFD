@@ -3,10 +3,10 @@
 @section('content')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Edit Kamar</h1>
-    <a href="{{ route('admin.kamar.index') }}" class="btn btn-secondary">Kembali</a>
+    <a href="{{ route('kamar.index') }}" class="btn btn-secondary">Kembali</a>
 </div>
 
-<form action="{{ route('admin.kamar.update', $kamar->id) }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('kamar.update', $kamar->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="row">

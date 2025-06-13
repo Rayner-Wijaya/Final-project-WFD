@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $kamars=Kamar::all();
+        $kamars = Kamar::with(['jenisKamar', 'FasilitasKamar','FotoKamar'])->get();
         return view('admin.dashboard')->with('kamars', $kamars);
     }
 

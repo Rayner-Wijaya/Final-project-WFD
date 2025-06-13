@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Log;
 
 class AuthController extends Controller
 {
@@ -24,7 +25,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             
             if (Auth::user()->role === 'admin') {
-                echo('hello u have been authorized as an admin');
+                Log::debug('hello u have been authorized as an admin');
                 return redirect()->route('admin.dashboard');
             
             return redirect()->intended('/');

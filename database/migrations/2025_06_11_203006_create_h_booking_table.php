@@ -14,8 +14,8 @@ return new class extends Migration
             $table->string('username');
             $table->enum('status', ['pending', 'dibayar', 'batal'])->default('pending');
             $table->timestamps();
-            
-            $table->foreign('username')->references('username')->on('users');
+            $table->string('username')->nullable()->default(null)->change();
+            $table->foreign('username')->references('username')->on('users')->default(null);
         });
     }
 

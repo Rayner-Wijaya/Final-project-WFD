@@ -69,7 +69,7 @@
 <script>
     document.getElementById('btn_send_email').addEventListener('click', function() {
         if (document.getElementById('send_email').checked) {
-            // Here you would typically make an AJAX call to send the email
+            
             alert('Email konfirmasi telah dikirim ke tamu');
         } else {
             alert('Silakan centang checkbox untuk mengirim email');

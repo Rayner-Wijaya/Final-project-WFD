@@ -3,7 +3,7 @@
 @section('content')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Detail Reservasi</h1>
-    <a href="{{ route('admin.reservasi.index') }}" class="btn btn-secondary">Kembali</a>
+    <a href="{{ route('reservasi.index') }}" class="btn btn-secondary">Kembali</a>
 </div>
 
 <div class="card mb-4">
@@ -20,7 +20,7 @@
                     </tr>
                     <tr>
                         <th>Tanggal Booking</th>
-                        <td>{{ $booking->tglbooking->format('d M Y H:i') }}</td>
+                        <td>{{ $booking->tglbooking }}</td>
                     </tr>
                     <tr>
                         <th>Nama Tamu</th>
@@ -85,8 +85,8 @@
                         <tr>
                             <td>{{ $detail->kamar->nomor_kamar }}</td>
                             <td>{{ $detail->kamar->jenisKamar->nama_jenis }}</td>
-                            <td>{{ $detail->tglcheckin->format('d M Y') }}</td>
-                            <td>{{ $detail->tglcheckout->format('d M Y') }}</td>
+                            <td>{{ $detail->tglcheckin }}</td>
+                            <td>{{ $detail->tglcheckout }}</td>
                             <td>Rp {{ number_format($detail->harga, 0, ',', '.') }}</td>
                             <td>
                                 @if($detail->status == 'pending')

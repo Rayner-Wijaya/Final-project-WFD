@@ -44,12 +44,12 @@
                             </td>
                             <td>
                                 @foreach($booking->detailBookings as $detail)
-                                    {{ $detail->tglcheckin->format('d M Y') }}<br>
+                                    {{ $detail->tglcheckin }}<br>
                                 @endforeach
                             </td>
                             <td>
                                 @foreach($booking->detailBookings as $detail)
-                                    {{ $detail->tglcheckout->format('d M Y') }}<br>
+                                    {{ $detail->tglcheckout }}<br>
                                 @endforeach
                             </td>
                             <td>

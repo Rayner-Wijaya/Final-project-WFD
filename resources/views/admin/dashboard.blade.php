@@ -59,18 +59,43 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
+                        <th>Foto</th>
                         <th>No. Kamar</th>
                         <th>Tipe</th>
                         <th>Harga</th>
+                        <th>Fasilitas</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($kamars as $kamar)
                         <tr>
+                            <td>
+                                @if($kamar->FotoKamar)
+                                    @foreach ($kamar->FotoKamar as $foto)
+                                        <img src="{{ asset('storage/' . $foto->url_foto) }}" alt="Kamar {{ $kamar->nomor_kamar }}" class="img-thumbnail" style="width: 100px; height: auto;">
+                                    @endforeach                                    
+                                @else
+                                    <span class="text-muted">No image</span>
+                                @endif
+                            </td>
                             <td>{{ $kamar->nomor_kamar }}</td>
                             <td>{{ $kamar->jenisKamar->nama_jenis }}</td>
                             <td>Rp {{ number_format($kamar->harga, 0, ',', '.') }}</td>
+                            <td>
+                                @if($kamar->fasilitasKamar && $kamar->fasilitasKamar->count() > 0)
+                                    <ul class="list-unstyled mb-0">
+                                        @foreach($kamar->fasilitasKamar as $fasilitas)
+                                            <li>
+                                                <i class="fas fa-check-circle text-primary me-1"></i>
+                                                {{ $fasilitas->nama }}
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                @else
+                                    <span class="text-muted">Tidak ada fasilitas</span>
+                                @endif
+                            </td>
                             <td>
                                 @if($kamar->status == 'tersedia')
                                     <span class="badge bg-success">Tersedia</span>
@@ -86,6 +111,17 @@
     </div>
 </div>
 @endsection
+
+@push('styles')
+<style>
+    .img-thumbnail {
+        object-fit: cover;
+    }
+    .table td {
+        vertical-align: middle;
+    }
+</style>
+@endpush
 
 @push('scripts')
 <script>

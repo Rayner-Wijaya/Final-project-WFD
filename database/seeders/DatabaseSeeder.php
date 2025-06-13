@@ -43,7 +43,21 @@ class DatabaseSeeder extends Seeder
             'role' => 'member',
             'status' => 'aktif',
         ]);
-
+        
+        // create a guest user for walk-in guests (EXTREMELY IMPORTANT)
+        User::create([
+            'username' => 'guest',
+            
+            'password' => Hash::make('password'),
+            'nama' => 'guest',
+            'alamat' => 'Jl. guest',
+            'telp' => '0811453938',
+            'kota' => 'Abyss',
+            'jeniskelamin' => 'P',
+            'tgllahir' => '1995-05-05',
+            'role' => 'member',
+            'status' => 'aktif',
+        ]);
         // Create jenis kamar
         $jenis1 = JenisKamar::create([
             'nama_jenis' => 'Standard',

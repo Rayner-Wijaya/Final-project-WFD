@@ -63,7 +63,7 @@ class ReservasiController extends Controller
         $kamar->status = 'dipesan';
         $kamar->save();
 
-        return redirect()->route('admin.reservasi.index')->with('success', 'Reservasi berhasil dibuat');
+        return redirect()->route('reservasi.index')->with('success', 'Reservasi berhasil dibuat');
     }
 
     public function show($id)

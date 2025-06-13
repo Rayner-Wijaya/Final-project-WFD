@@ -35,7 +35,7 @@ class DirectOrderController extends Controller
         $hbooking = HBooking::create([
             'nobooking' => $nobooking,
             'tglbooking' => Carbon::now(),
-            'username' => 'guest', // or create a guest user
+            'username'=>'guest',
             'status' => 'dibayar',
         ]);
 
