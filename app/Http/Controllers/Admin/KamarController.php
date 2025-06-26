@@ -35,7 +35,7 @@ class KamarController extends Controller
             'jenis_kamar_id' => 'required|exists:jenis_kamar,id',
             'harga' => 'required|integer',
             'status' => 'required|in:tersedia,dipesan',
-            'foto.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'foto.*' => 'image|mimes:jpeg,png,jpg,gif',
             'fasilitas_nama.*' => 'nullable|string',
             'fasilitas_deskripsi.*' => 'nullable|string',
         ]);

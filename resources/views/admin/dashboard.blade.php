@@ -76,7 +76,7 @@
                                         <img src="{{ asset('storage/' . $foto->url_foto) }}" alt="Kamar {{ $kamar->nomor_kamar }}" class="img-thumbnail" style="width: 100px; height: auto;">
                                     @endforeach                                    
                                 @else
-                                    <span class="text-muted">No image</span>
+                                    <span class="text-muted">No image</span>    
                                 @endif
                             </td>
                             <td>{{ $kamar->nomor_kamar }}</td>
